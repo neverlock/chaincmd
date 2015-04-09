@@ -1,0 +1,4 @@
+#Programm will replace "ID" to xxxx when HTTP GET request ?ID=xxxx
+[copycat]
+cmd = echo
+arg = hello world ID
