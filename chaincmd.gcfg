@@ -2,3 +2,4 @@
 [copycat]
 cmd = echo
 arg = hello world ID
+bind = :8080
