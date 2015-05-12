@@ -54,9 +54,12 @@ func main(){
 func execmd(cmd string,arg1 string,arg2 string) {
 	exe := exec.Command(cmd,arg1,arg2)
 	var out bytes.Buffer
+	var stderr bytes.Buffer
 	exe.Stdout = &out
+	exe.Stderr = &stderr
 	err := exe.Run()
 	if err != nil {
+		fmt.Println(fmt.Sprint(err) + ": " + stderr.String())
 		log.Fatal(err)
 	}
 	log.Println("STDOUT:", out.String())
